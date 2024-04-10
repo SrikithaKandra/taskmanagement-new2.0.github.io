@@ -1,0 +1,171 @@
+body {
+    font-family: serif, Playfair Display;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+
+header {
+    background-color: #2d545e;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.column {
+    flex: 1;
+    background-color: #e1b382;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-right: 10px;
+    overflow: auto;
+    max-height: 400px;
+    min-height: 100px;
+}
+
+.task {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor: move;
+}
+
+.task:hover {
+    background-color: #f2f2f2;
+}
+
+.add-task-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #12343b;
+    color: #f9f6f6;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 30%;
+}
+
+.add-task-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #e7c29a;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.option-button {
+    background-color: #12343b;
+    color: #f9f6f6;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.course-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Menu content style. */
+.menu-content {
+    position: relative;
+    background-color: #e7c29a;
+    padding: 20px;
+    min-width: 400px;
+    max-width: 400px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+/* Delete container style. */
+.delete-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Delete confirmation pop up style. */
+.delete-confirm {
+    position: relative;
+    background-color: #e7c29a;
+    padding: 20px;
+    min-width: 400px;
+    max-width: 400px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.calendar-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ui-datepicker-calendar td.highlight {
+    background-color: #b3d9ff !important; /* Highlight color for the current date */
+}
+
+.close-calendar-button {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #ff9999; /* Close button background color */
+    color: #fff; /* Close button text color */
+    border: none;
+    cursor: pointer;
+}
+
+.calendar-task {
+    background-color: #ffeeba;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
