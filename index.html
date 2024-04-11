@@ -110,6 +110,13 @@
             </form>
         </div>
     </div>
+
+    <!-- This is popup window for UNDO-->
+    <div id="undoPopup" class="popup">
+    <p>Task deleted. Undo?</p>
+    <button onclick="undoDeletion()">Undo</button>
+    <button onclick="closeUndoPopup()">Close</button>
+    </div>
     
     <div id="calendarSection" class="calendar-section">
         <div id="calendar" class="calendar"></div>

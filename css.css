@@ -138,6 +138,30 @@ header {
     border-radius: 5px;
 }
 
+/* Style for the undo popup window */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e7c29a; /* Change background color as needed */
+    padding: 20px;
+    min-width: 400px;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}
+
+.popup p {
+    margin-bottom: 10px;
+}
+
+.popup button {
+    margin-right: 10px;
+}
+
 .calendar-section {
     display: none;
     margin-top: 20px;

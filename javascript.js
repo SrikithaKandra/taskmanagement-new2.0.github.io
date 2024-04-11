@@ -215,7 +215,43 @@ function addTask() {
             var taskItem = document.getElementById(taskId);
             // Ask for confirmation before deleting.
             if (window.confirm("Are you sure you want to delete this?") && taskItem) {
+                // Show the undo popup before deleting the task
+                showUndoPopup(taskId);
                 taskItem.parentNode.removeChild(taskItem);
+            }
+        }
+
+        // Global variable to store the last deleted task
+        var lastDeletedTask = null;
+
+        // Function to show the undo popup
+        function showUndoPopup(taskId) {
+            // Store the task information before deleting it
+            lastDeletedTask = document.getElementById(taskId).cloneNode(true);
+
+            // Show the undo popup
+             var undoPopup = document.getElementById("undoPopup");
+             undoPopup.style.display = "block";
+
+              // Set a timeout to automatically close the popup after a few seconds
+             setTimeout(function () {
+                 closeUndoPopup();
+             }, 5000); // Adjust the time as needed
+        }
+
+        // Function to close the undo popup
+        function closeUndoPopup() {
+         var undoPopup = document.getElementById("undoPopup");
+         undoPopup.style.display = "none";
+        }
+
+        // Function to undo the last deletion
+        function undoDeletion() {
+             if (lastDeletedTask) {
+                var allTasksColumn = document.getElementById("allTasks");
+                allTasksColumn.appendChild(lastDeletedTask);
+                lastDeletedTask = null;
+                closeUndoPopup();
             }
         }
 
