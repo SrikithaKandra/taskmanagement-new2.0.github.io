@@ -34,6 +34,40 @@ $(function () {
     });
 });
 
+// Function to initialize the form validation and character constraint
+function initializeFormValidation() {
+    // Get the task name and description input fields
+    var taskNameInput = document.getElementById("taskTitle");
+    var taskDescriptionInput = document.getElementById("taskDescription");
+
+    // Add event listeners to the input fields to check for invalid characters
+    taskNameInput.addEventListener("input", function () {
+        var invalidCharacters = /[/\\?*<>~;,']/; // Define the regex for invalid characters
+        if (invalidCharacters.test(this.value)) {
+            // If invalid characters are found, show a warning message
+            this.setCustomValidity("Task Name cannot contain characters /[/\\?*<>~;,']/");
+        } else {
+            // Otherwise, clear any existing validation message
+            this.setCustomValidity("");
+        }
+    });
+
+    taskDescriptionInput.addEventListener("input", function () {
+        var invalidCharacters = /[/\\?*<>~;,']/; // Define the regex for invalid characters
+        if (invalidCharacters.test(this.value)) {
+            // If invalid characters are found, show a warning message
+            this.setCustomValidity("Task Description cannot contain characters /[/\\?*<>~;,']/");
+        } else {
+            // Otherwise, clear any existing validation message
+            this.setCustomValidity("");
+        }
+    });
+}
+
+// Add an event listener to the window to call the initialization function when the page loads
+window.addEventListener("load", initializeFormValidation);
+
+
 function openAddTaskModal(dateText) {
     $("#addTaskModal").css("display", "flex");
     const formattedDate = $.datepicker.formatDate("yy-mm-dd", new Date(dateText));
