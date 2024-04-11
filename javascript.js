@@ -65,7 +65,11 @@ function initializeFormValidation() {
 }
 
 // Add an event listener to the window to call the initialization function when the page loads
-window.addEventListener("load", initializeFormValidation);
+taskNameInput.addEventListener("input", function () {
+    console.log("Input detected in Task Name field");
+    // Rest of the event listener code
+});
+
 
 
 function openAddTaskModal(dateText) {
