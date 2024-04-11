@@ -86,7 +86,14 @@ function addTask() {
     var course = document.getElementById("courseOptions").value;
     var selectedDate = document.getElementById("selectedDate").value;
     var priority = document.getElementById("taskPriority").value;
+// Regular expression to match disallowed characters
+var disallowedCharsRegex = /[\/\\?*:“<>~;'"[\]{}()&^%$.]/;
 
+// Check if title or description contain disallowed characters
+if (disallowedCharsRegex.test(title) || disallowedCharsRegex.test(description)) {
+    alert("Task name and description cannot contain the following characters: / \\ ? * : “ < > ~ ; ' [ ] { } ( ) & ^ % . $");
+    return false; // Prevent form submission
+}
     var editMode = document.getElementById("addTaskForm").getAttribute("data-edit-mode") === "true";
     var taskId = document.getElementById("addTaskForm").getAttribute("data-task-id");
 
