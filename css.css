@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #2d545e;
+    background-color: #301934;
     color: white;
     text-align: center;
     padding: 1em;
@@ -20,7 +20,8 @@ header {
 
 .column {
     flex: 1;
-    background-color: #e1b382;
+    background-color: #301934;
+    color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-right: 10px;
@@ -30,7 +31,8 @@ header {
 }
 
 .task {
-    background-color: #fff;
+    background-color: white;
+    color: black;
     border: 1px solid #ccc;
     margin-bottom: 5px;
     padding: 10px;
@@ -45,7 +47,7 @@ header {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #12343b;
+    background-color: #301934;
     color: #f9f6f6;
     padding: 20px;
     border: none;
@@ -68,7 +70,7 @@ header {
 
 .modal-content {
     position: relative;
-    background-color: #e7c29a;
+    background-color: #CBC3E3;
     padding: 20px;
     max-width: 400px;
     margin: 20px;
@@ -83,7 +85,7 @@ header {
 }
 
 .option-button {
-    background-color: #12343b;
+    background-color: #301934;
     color: #f9f6f6;
     padding: 15px;
     border: none;
@@ -106,7 +108,7 @@ header {
 /* Menu content style. */
 .menu-content {
     position: relative;
-    background-color: #e7c29a;
+    background-color: #CBC3E3;
     padding: 20px;
     min-width: 400px;
     max-width: 400px;
@@ -130,7 +132,7 @@ header {
 /* Delete confirmation pop up style. */
 .delete-confirm {
     position: relative;
-    background-color: #e7c29a;
+    background-color: #CBC3E3;
     padding: 20px;
     min-width: 400px;
     max-width: 400px;
@@ -145,7 +147,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #e7c29a; /* Change background color as needed */
+    background-color: #CBC3E3; /* Change background color as needed */
     padding: 20px;
     min-width: 400px;
     max-width: 400px;
@@ -180,14 +182,14 @@ header {
 .close-calendar-button {
     margin-bottom: 10px;
     padding: 5px 10px;
-    background-color: #ff9999; /* Close button background color */
-    color: #fff; /* Close button text color */
+    background-color: #CBC3E3; /* Close button background color */
+    color: black; /* Close button text color */
     border: none;
     cursor: pointer;
 }
 
 .calendar-task {
-    background-color: #ffeeba;
+    background-color: #CBC3E3;
     padding: 5px;
     margin: 2px;
     border-radius: 3px;
