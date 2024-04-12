@@ -85,7 +85,15 @@ function addTask() {
     var description = document.getElementById("taskDescription").value;
     var course = document.getElementById("courseOptions").value;
     var selectedDate = document.getElementById("selectedDate").value;
+    var priorityColor = "";
     var priority = document.getElementById("taskPriority").value;
+    if (priority === "low") {
+        priorityColor = "green";
+    } else if (priority === "medium") {
+        priorityColor = "orange";
+    } else if (priority === "high") {
+        priorityColor = "red";
+    }
  // Regular expression to match disallowed characters
  var disallowedCharsRegex = /[\/\\?*:“<>~;'"[\]{}()&^%$.]/;
 
@@ -130,10 +138,10 @@ function addTask() {
             taskItem.setAttribute("ondragstart", "drag(event)");
 
             taskItem.innerHTML = `
-                <h3>${title} - ${course}</h3>
-                <p>${description}</p>
-                <p>Priority: ${priority}</p>
-                <p>Deadline: ${selectedDate}</p>
+                <h3 style="color: ${priorityColor};">${title} - ${course}</h3>
+        <p style="color: ${priorityColor};">${description}</p>
+        <p style="color: ${priorityColor};">Priority: ${priority}</p>
+        <p style="color: ${priorityColor};">Deadline: ${selectedDate}</p>
                 <button onclick="completeTask('${taskId}')">Complete</button>
                 <button onclick="editTask('${taskId}')">Edit</button>
                 <button onclick="deleteTask('${taskId}')">Delete</button>
@@ -152,7 +160,7 @@ function addTask() {
 
 
         function updateTaskStatus(taskId, newStatus) {
-          
+
             var taskItem = document.getElementById(taskId);
             var targetColumn = document.getElementById(newStatus);
 
@@ -186,20 +194,20 @@ function addTask() {
             var description = taskItem.querySelector("p").innerText;
             var selectedDate = taskItem.querySelector("p:nth-child(4)").innerText;
             var priority = taskItem.querySelector("p:nth-child(3)").innerText.trim();
-        
+
             // Set form fields with task details for editing
             document.getElementById("taskTitle").value = title.substring(0, title.indexOf("-")).trim();
             document.getElementById("taskDescription").value = description;
             document.getElementById("selectedDate").value = selectedDate;
             document.getElementById("taskPriority").value = priority;
-        
+
             // Set the course option
             var course = title.substring(title.indexOf("-") + 1).trim();
             document.getElementById("courseOptions").value = course;
-        
+
             // Open the AddTaskModal window
             openAddTaskModal();
-        
+
             // Set attributes to indicate edit mode and task ID
             document.getElementById("addTaskForm").setAttribute("data-edit-mode", "true");
             document.getElementById("addTaskForm").setAttribute("data-task-id", taskId);
@@ -257,7 +265,7 @@ function addTask() {
 
         function drag(event) {
             event.dataTransfer.setData("text", event.target.id);
-          
+
         }        
 
         /* Used to open the course menu. */ 
