@@ -11,7 +11,44 @@ header {
     text-align: center;
     padding: 1em;
 }
+/* TAB STYLING */
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+/* Style the buttons inside the tab */
+.tab button {
+background-color: inherit;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 14px 16px;
+transition: 0.3s;
+font-size: 17px;
+}
 
+/* Change background color of buttons on hover */
+.tab button:hover {
+background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+display: none;
+padding: 6px 12px;
+border-top: none;
+}
+
+/* KANBAN BOARD STYLING*/
 .columns {
     display: flex;
     justify-content: space-between;
@@ -42,16 +79,16 @@ header {
 }
 
 .add-task-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+    position: relative;
+    left: 340px;
+    bottom: 75px;
     background-color: #12343b;
     color: #f9f6f6;
-    padding: 20px;
+    padding: 5px;
     border: none;
     cursor: pointer;
     font-size: 20px;
-    border-radius: 30%;
+    border-radius: 25%;
 }
 
 .add-task-modal {
@@ -82,15 +119,7 @@ header {
     cursor: pointer;
 }
 
-.option-button {
-    background-color: #12343b;
-    color: #f9f6f6;
-    padding: 15px;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-}
-
+/* STYLES FOR COURSES */
 .course-menu {
     display: none;
     position: fixed;
@@ -114,6 +143,40 @@ header {
     border-radius: 5px;
 }
 
+/* CALENDAR STYLES */
+.calendar-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ui-datepicker-calendar td.highlight {
+    background-color: #b3d9ff !important; /* Highlight color for the current date */
+}
+
+.close-calendar-button {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #ff9999; /* Close button background color */
+    color: #fff; /* Close button text color */
+    border: none;
+    cursor: pointer;
+}
+
+.calendar-task {
+    background-color: #ffeeba;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* OTHER STYLES */
 /* Delete container style. */
 .delete-container {
     display: none;
@@ -160,36 +223,4 @@ header {
 
 .popup button {
     margin-right: 10px;
-}
-
-.calendar-section {
-    display: none;
-    margin-top: 20px;
-}
-
-.calendar {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.ui-datepicker-calendar td.highlight {
-    background-color: #b3d9ff !important; /* Highlight color for the current date */
-}
-
-.close-calendar-button {
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    background-color: #ff9999; /* Close button background color */
-    color: #fff; /* Close button text color */
-    border: none;
-    cursor: pointer;
-}
-
-.calendar-task {
-    background-color: #ffeeba;
-    padding: 5px;
-    margin: 2px;
-    border-radius: 3px;
-    cursor: pointer;
 }
