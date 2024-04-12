@@ -102,15 +102,23 @@ function openTab(evt, cityName) {
     var description = document.getElementById("taskDescription").value;
     var course = document.getElementById("courseOptions").value;
     var selectedDate = document.getElementById("selectedDate").value;
+    var priorityColor = "";
     var priority = document.getElementById("taskPriority").value;
-    // Regular expression to match disallowed characters
-    var disallowedCharsRegex = /[\/\\?*:“<>~;'"[\]{}()&^%$.]/;
-  
-    // Check if title or description contain disallowed characters
-    if (disallowedCharsRegex.test(title) || disallowedCharsRegex.test(description)) {
-      alert("Task name and description cannot contain the following characters: / \\ ? * : “ < > ~ ; ' [ ] { } ( ) & ^ % . $");
-      return false; // Prevent form submission
+    if (priority === "low") {
+        priorityColor = "green";
+    } else if (priority === "medium") {
+        priorityColor = "orange";
+    } else if (priority === "high") {
+        priorityColor = "red";
     }
+ // Regular expression to match disallowed characters
+ var disallowedCharsRegex = /[\/\\?*:“<>~;'"[\]{}()&^%$.]/;
+
+ // Check if title or description contain disallowed characters
+ if (disallowedCharsRegex.test(title) || disallowedCharsRegex.test(description)) {
+     alert("Task name and description cannot contain the following characters: / \\ ? * : “ < > ~ ; ' [ ] { } ( ) & ^ % . $");
+     return false; // Prevent form submission
+ }
     var editMode = document.getElementById("addTaskForm").getAttribute("data-edit-mode") === "true";
     var taskId = document.getElementById("addTaskForm").getAttribute("data-task-id");
   
@@ -147,10 +155,10 @@ function openTab(evt, cityName) {
       taskItem.setAttribute("ondragstart", "drag(event)");
   
       taskItem.innerHTML = `
-        <h3>${title} - ${course}</h3>
-        <p>${description}</p>
-        <p>Priority: ${priority}</p>
-        <p>Deadline: ${selectedDate}</p>
+        <h3 style="color: ${priorityColor};">${title} - ${course}</h3>
+<p style="color: ${priorityColor};">${description}</p>
+<p style="color: ${priorityColor};">Priority: ${priority}</p>
+<p style="color: ${priorityColor};">Deadline: ${selectedDate}</p>
         <button onclick="completeTask('${taskId}')">Complete</button>
         <button onclick="editTask('${taskId}')">Edit</button>
         <button onclick="deleteTask('${taskId}')">Delete</button>
