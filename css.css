@@ -8,8 +8,8 @@
   --column-bg-color: #e1b382;
   --task-bg-color: white;
   --task-hover-bg-color: #f2f2f2;
-  --add-task-button-bg-color: #301934;
-  --add-task-button-color: #f9f6f6;
+  --add-task-button-bg-color: #e1b382;
+  --add-task-button-color: black;
   --modal-bg-color: #e1b382;
   --course-menu-bg-color: rgba(0, 0, 0, 0.5);
   --menu-content-bg-color: #e1b382;
@@ -129,6 +129,11 @@ header {
   cursor: pointer;
   font-size: 20px;
   border-radius: 25%;
+}
+.dark-mode .add-task-button{
+  background-color: #301934;
+  color: white;
+  
 }
 
 .add-task-modal {
