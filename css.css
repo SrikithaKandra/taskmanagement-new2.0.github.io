@@ -184,6 +184,7 @@ header {
 
 .dark-mode .course-menu {
   background-color: #301934;
+  color: black;
 }
 
 /* Menu content style. */
